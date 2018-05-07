@@ -1,13 +1,18 @@
 import pickle
 
 def main():
-	amrs = pickle.load(open("AMR_pickles/dev/dev-bolt.pickle","rb"))
+	amrs = pickle.load(open("AMR_pickles/dev-bolt.pickle","rb"))
 
 	text = amrs["bolt12_64545_0562.1"]#["bolt12_6454_5051.6"]
-	print(text)
+	#print(text)
 
 	text = text.replace(" :wiki -","")
-	stripped = text.split(" ")
+	sent, amr = text.split("@@\n")
+	words = sent.split()
+
+	stripped = amr.split(" ")
+	print(words)
+	#print(amr)
 	
 	previous = ""
 	toggle = 0

@@ -5,7 +5,7 @@ def main():
 	corpus = "xinhua" # amr-guidelines / bolt / consensus / cctv / dfa / mt09sdl / proxy / wb / xinhua
 	
 	try:
-		amrs = pickle.load(open("AMR_pickles/{0}/{0}-{1}.pickle".format(section,corpus),"rb"))
+		amrs = pickle.load(open("AMR_pickles/{}-{}.pickle".format(section,corpus),"rb"))
 
 		hits,wiki = 0,0 # count hits and total wiki links
 		for ID in amrs:

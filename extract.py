@@ -13,6 +13,8 @@ def main():
 		elif line[0:6] == "# ::id":
 			ID = line.split()[2]
 			amr = str()
+		elif line[0:7] == "# ::snt":
+			amr += line[8:] + "@@\n"
 		elif line.split():
 			if line[0] != "#":
 				amr += line

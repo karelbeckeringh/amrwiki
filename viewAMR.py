@@ -1,12 +1,13 @@
 import pickle
 
 def main():
-	amrs = pickle.load(open("AMR_pickles/dev/dev-bolt.pickle","rb"))
+	amrs = pickle.load(open("AMR_pickles/dev-bolt.pickle","rb"))
 	for ID in amrs:
-		amr = amrs[ID]
-		if ":wiki -" in amr:
-		#if ":wiki" in amr.replace(":wiki","",4):
+		sent, amr = amrs[ID].split("@@\n")
+		#if ":wiki -" in amr:
+		if ":wiki" in amr.replace(":wiki","",4):
 			print(ID)
+			print(sent)
 			print(amr)
 
 

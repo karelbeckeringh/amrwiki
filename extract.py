@@ -23,7 +23,7 @@ def main():
 					c += 1
 
 	#print(c)
-	pickle.dump(amrs, open(str(section)+"-"+str(corpus)+".pickle", "wb"))
+	pickle.dump(amrs, open("{}-{}.pickle".format(section,corpus), "wb"))
 
 if __name__ == '__main__':
 	main()
